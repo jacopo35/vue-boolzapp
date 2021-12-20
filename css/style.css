@@ -7,6 +7,8 @@
 html {
     color: black;
     font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .head-container {
@@ -89,3 +91,27 @@ html {
     color: #8edafc
     ;
 } 
+
+.notification a{
+    font-size: 0.8em;
+}
+
+.search {
+    padding: 5px;
+    background-color: #eaeaea
+    ;
+}
+
+.input {
+    background-color: white;
+    padding: 5px;
+    display: flex;
+}
+
+.input input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+
