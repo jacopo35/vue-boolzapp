@@ -20,57 +20,79 @@
 </head>
 <!--inizio body-->
 <body>
-    <!--inizio main-->
- <main>
-  <div class="p-relative">
-    <div class="head-container"></div>
-     <div class="bottom-container"></div>
-      <div id="app" class="inner-container">
-       <div class="w-30 h-100">
-        <div class="profile">
-         <div class="l-profile">
+ <div class="p-relative">
+   <div class="head-container"></div>
+    <div class="bottom-container"></div>
+     <div id="app" class="inner-container">
+      <div class="inner-container-l">
+       <div class="profile">
+        <div class="l-profile">
          <img src="img/avatar_1.jpg" alt="">
-         <h3><span>Jaco</span></h3>
-         </div>
-          <div class="c-grey">
-             <i class="fas fa-redo"></i>
-             <i class="fas fa-comment-alt"></i>
-             <i class="fas fa-ellipsis-v"></i>
-          </div>
+          <h1><span> Jaco </span></h1>
         </div>
-        <div class="notification">
-         <i class="font-s-2 fas fa-bell-slash"></i>
-          <div>
-           <div> Ricevi notifiche di nuovi messaggi </div>
-            <a class="font-s-08"> Attiva notifiche desktop </a>
-          </div>
+        <div class="c-grey">
+            <i class="fas fa-redo"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div class="search c-grey">
-         <div class="input">
-          <i class="fas fa-search"></i>
-           <input type="text" placeholder="cerca o inizia una nuova chat">
-         </div>
         </div>
-        <ul class="users">
-         <li v-for="(contact, index) in contacts" :key="index">
-          <div>
-           <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+         <div class="notification">
+           <i class="font-s-2 fas fa-bell-slash"></i>
             <div>
-            <div>{{contact.name}}</div>
-            <div class="c-grey received">ok</div>
-            </div>
+            <div> Ricevi notifiche di nuovi messaggi </div>
+            <a class="font-s-08" href=""> Attiva notifiche desktop </a>
+         </div>
           </div>
-            <div class="c-grey"> {{contact.messages[0].date}} </div>
-         </li>
-        </ul>
-       </div>
-        <div class="w-70 h-100"></div>
-       </div>
-       </div>
+            <div class="search c-grey">
+             <div class="input">
+              <i class="fas fa-search"></i>
+              <input type="text" placeholder="cerca o inizia una nuova chat">
+            </div>
+            </div>
+             <ul class="users">
+              <li v-for="(contact, index) in contacts" :key="index">
+               <div class="w-50">
+                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                <div>
+                 <div>{{contact.name}}</div>
+                 <div class="c-grey received">{{contact.messages[2].text}}</div>
+                </div>
+               </div>
+                <div class="c-grey">{{contact.messages[2].date}}</div>
+              </li>
+            </ul>
+        </div>
+        <div class="inner-container-r">
+         <div class="user-profile">
+          <div>
+            <img src="img/avatar_3.jpg" alt="">
+             <div>
+              <div>Samuele</div>
+              <div class="last-access"> Ultimo accesso </div>
+             </div>
+          </div>
+            <div class="c-grey">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            </div>
+            <ul class="body-messages">
+             <li :class="(message.status == 'received') ? 'send' : '' "
+                  v-for="(message, index) in contacts[0].messages" :key="index">
+             <div> {{message.text}}</div>
+             <div class="date"></div>
+             </li>
+            </ul>
+            <div class="messages">
+             <i class="far fa-smile"></i>
+             <input type="text" placeholder="Scrivere un messaggio">
+             <i class="fas fa-microphone"></i>
+            </div>
+        </div>
+    </div>
     <!--script2-->
     <script src="js/script.js"></script>
-  </main>
-  <!--fine main-->
 </body>
 <!--fine body-->
 </html>
