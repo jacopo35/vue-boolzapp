@@ -20,15 +20,17 @@
 </head>
 <!--inizio body-->
 <body>
- <div class="p-relative">
+    <!--inizio main-->
+ <main>
+  <div class="p-relative">
     <div class="head-container"></div>
      <div class="bottom-container"></div>
-      <div class="inner-container">
+      <div id="app" class="inner-container">
        <div class="w-30 h-100">
         <div class="profile">
          <div class="l-profile">
          <img src="img/avatar_1.jpg" alt="">
-         <span>Jaco</span>
+         <h3><span>Jaco</span></h3>
          </div>
           <div class="c-grey">
              <i class="fas fa-redo"></i>
@@ -49,13 +51,26 @@
            <input type="text" placeholder="cerca o inizia una nuova chat">
          </div>
         </div>
-        <div class="users"></div>
+        <ul class="users">
+         <li v-for="(contact, index) in contacts" :key="index">
+          <div>
+           <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+            <div>
+            <div>{{contact.name}}</div>
+            <div class="c-grey received">ok</div>
+            </div>
+          </div>
+            <div class="c-grey"> {{contact.messages[0].date}} </div>
+         </li>
+        </ul>
        </div>
         <div class="w-70 h-100"></div>
        </div>
        </div>
     <!--script2-->
     <script src="js/script.js"></script>
+  </main>
+  <!--fine main-->
 </body>
 <!--fine body-->
 </html>
