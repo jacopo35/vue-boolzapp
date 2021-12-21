@@ -188,6 +188,7 @@ body {
 .body-messages .send {
     align-self: flex-end;
     background-color: chartreuse;
+    margin: 10px;
 }
 
 .body-messages .date {
@@ -196,12 +197,13 @@ body {
 }
 
 .messages {
-    padding: 11px;
+    padding: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color:#eaeaea ;
     height: 70px;
+    
 }
 
 ul li {

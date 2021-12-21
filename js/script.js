@@ -12,6 +12,7 @@ const project = new Vue({
     el: "#app",
     data: {
         counter: 0,
+        status:[],
         contacts: [
             {
                 name: "Michele",
@@ -107,6 +108,16 @@ const project = new Vue({
  methods: {
     change: function (index) {
             this.counter = index
+            this.status = []
+            this.contacts[this.counter].messages.forEach(element => {
+             if (element.status == "received") {
+            this.status.push(element.date)
+             }
+        
+         });
         },
+    },
+    created() {
+        this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
     },
 })
