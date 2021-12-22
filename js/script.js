@@ -12,7 +12,7 @@ const project = new Vue({
     el: "#app",
     data: {
         counter: 0,
-        status:[],
+        addSend: "",
         contacts: [
             {
                 name: "Michele",
@@ -105,19 +105,39 @@ const project = new Vue({
             },
         ],
     },
- methods: {
-    change: function (index) {
-            this.counter = index
-            this.status = []
-            this.contacts[this.counter].messages.forEach(element => {
-             if (element.status == "received") {
-            this.status.push(element.date)
-             }
-        
-         });
+    methods: {
+        change: function (index) {
+        this.counter = index
         },
-    },
+        
+    lastAccess: function (messages) {
+                let access = messages.filter((message) => {
+                return message.status == 'received'
+                 })
+                let lunghezza = access.length - 1;
+                return access[lunghezza];
+                },
+
+    send: function () {
+          dayjs.extend(window.dayjs_plugin_customParseFormat);
+          let data = dayjs().format("D/M/YYYY HH:mm:ss");
+           if (this.addSend != '') {
+               this.contacts[this.counter].messages.push({
+                date: data,
+                text: this.addSend,
+                status: "sent",
+            })
+            this.addSend = "";
+    setTimeout(() => {
+                       this.contacts[this.counter].messages.push({
+                       date: data,
+                       text: "ok",
+                       status: "received",
+                    })
+                }, 2000);
+            }
+        },
+     },
     created() {
-        this.status = [this.contacts[0].messages[this.contacts[0].messages.length - 1].date]
-    },
+ },
 })
