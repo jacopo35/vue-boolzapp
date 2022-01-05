@@ -103,6 +103,14 @@ h1{
     height: 100%;
 }
 
+.mess-notification{
+    color: black;
+}
+
+.font-s-08{
+    color: black;
+    text-decoration: darkblue;
+}
 .p-relative{
     position: relative;
 }
