@@ -1,18 +1,45 @@
-* {
-   padding: 0px;
-   margin: 0px;
-   box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    color: black;
+html{
     font-size: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     min-width: 1200px;
+}
+
+
+.splash-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #02d755;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.splash-page.hidden {
+    transition: all 2s linear;
+    opacity: 0;
+}
+
+.splash-page.hidden.d-none {
+    display: none;
+}
+
+h1{
+    font-size: 3em;
+    padding-bottom: 1em;
 }
 
 .head-container {
@@ -23,6 +50,28 @@ body {
 .bottom-container {
     height: 80vh;
     background-color: #d9dbd6;
+}
+
+.welcome {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: black;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-welcome {
+    background-color: white;
+    width: 50%;
+}
+
+
+.inner-welcome .title{
+    text-align: center;
 }
 
 .inner-container {
@@ -61,15 +110,34 @@ body {
 .profile {
     display: flex;
     justify-content: space-between;
-    background-color: #eaeaea
-    ;
+    background-color: #eaeaea;
     padding: 10px;
-    border-right: 1px solid grey;
+    border-right: 1px #ededed;
 }
 
-.profile div {
+.profile > div {
     display: flex;
     align-items: center;
+}
+
+.head-profile .deleteAll {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    color: black;
+}
+
+.head-profile .deleteAll > div {
+    background-color: white;
+}
+
+.head-profile .deleteAll > div:hover {
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.border {
+    border: 1px #ebebeb;
 }
 
 .c-grey {
@@ -84,7 +152,7 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #8edafc;
+    background-color:#4fc2f7;
 }
 
 .notification i{
@@ -92,7 +160,7 @@ body {
     padding: 10px;
     background-color: honeydew;
     border-radius: 50%;
-    color: #8edafc;
+    color: #4fc2f7;
 } 
 
 .notification a{
@@ -101,8 +169,7 @@ body {
 
 .search {
     padding: 5px;
-    background-color: #eaeaea
-    ;
+    background-color: #eaeaea;
 }
 
 .input {
@@ -150,7 +217,7 @@ body {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    background-color:#eaeaea ;
+    background-color:#eaeaea;
 }
 
 .user-profile > div {
@@ -164,8 +231,9 @@ body {
 
 .last-access{
     font-size: 0.7em;
-    color:grey ;
+    color:grey;
 }
+
 
 .body-messages {
     background-image: url(../img/mine.jpg);
@@ -177,18 +245,43 @@ body {
 }
 
 .body-messages li {
+    
     padding: 10px;
-    background-color: white;
+    background-color: #ffffff;
     width: 30%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
 }
+
+.down {
+    position: relative;
+}
+
+.down i {
+    cursor: pointer;
+}
+
+.down .appear {
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    background-color: azure;
+    width: 100%;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+
+.down .appear div:hover {
+    background-color: #e8ebeb;
+    cursor: pointer;
+} 
 
 .body-messages .send {
     align-self: flex-end;
-    background-color: chartreuse;
-    margin: 10px;
+    background-color: #dbf8c6;
 }
 
 .body-messages .date {
@@ -197,13 +290,12 @@ body {
 }
 
 .messages {
-    padding: 15px;
+    padding: 11px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color:#eaeaea ;
     height: 70px;
-    
 }
 
 ul li {
@@ -212,7 +304,7 @@ ul li {
 
 .messages i {
     font-size: 2em;
-    color: grey;
+    color: #ffffff;
 }
 
 .messages input {
